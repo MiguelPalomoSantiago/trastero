@@ -11,22 +11,16 @@
     * { -webkit-tap-highlight-color: transparent; box-sizing: border-box; }
     body { font-family: 'Space Grotesk', sans-serif; background: #0f1117; color: #e8e9ed; min-height: 100dvh; }
     .mono { font-family: 'JetBrains Mono', monospace; }
-
-    /* ── Semáforo ── */
     .card-green  { border-color: #22c55e; background: linear-gradient(135deg, #0f2a1a 0%, #0f1117 100%); }
     .card-yellow { border-color: #eab308; background: linear-gradient(135deg, #2a230f 0%, #0f1117 100%); }
     .card-red    { border-color: #ef4444; background: linear-gradient(135deg, #2a0f0f 0%, #0f1117 100%); animation: pulse-red 2.5s ease-in-out infinite; }
-
     @keyframes pulse-red {
       0%, 100% { box-shadow: 0 0 0 0 rgba(239,68,68,0); }
       50%       { box-shadow: 0 0 0 6px rgba(239,68,68,0.15); }
     }
-
     .badge-green  { background:#14532d; color:#4ade80; }
     .badge-yellow { background:#422006; color:#facc15; }
     .badge-red    { background:#450a0a; color:#f87171; }
-
-    /* ── Botones +/- ── */
     .btn-qty {
       width: 52px; height: 52px; border-radius: 12px; border: 1.5px solid #2d3040;
       display: flex; align-items: center; justify-content: center;
@@ -37,8 +31,6 @@
     .btn-qty:active { transform: scale(0.9); }
     .btn-minus:active { background: #450a0a; border-color: #ef4444; color: #f87171; }
     .btn-plus:active  { background: #14532d; border-color: #22c55e; color: #4ade80; }
-
-    /* ── Toggle compra ── */
     .toggle-track {
       width: 52px; height: 28px; border-radius: 14px; background: #1a1d2e; border: 1.5px solid #2d3040;
       position: relative; cursor: pointer; transition: background .2s;
@@ -49,8 +41,6 @@
       position: absolute; top: 2px; left: 2px; transition: all .2s; box-shadow: 0 1px 4px #0006;
     }
     .toggle-track.on .toggle-thumb { left: 26px; background: #3b82f6; }
-
-    /* ── Input búsqueda ── */
     .search-input {
       background: #1a1d2e; border: 1.5px solid #2d3040; color: #e8e9ed;
       border-radius: 12px; padding: 12px 16px 12px 44px;
@@ -59,8 +49,6 @@
     }
     .search-input:focus { border-color: #3b82f6; }
     .search-input::placeholder { color: #4b5563; }
-
-    /* ── Modal ── */
     .modal-overlay {
       position: fixed; inset: 0; background: rgba(0,0,0,.7);
       backdrop-filter: blur(4px); display: flex; align-items: flex-end;
@@ -74,8 +62,6 @@
     }
     .modal-overlay.open .modal-sheet { transform: translateY(0); }
     .modal-handle { width: 40px; height: 4px; background: #2d3040; border-radius: 2px; margin: 0 auto 20px; }
-
-    /* ── Form inputs en modal ── */
     .form-input {
       background: #0f1117; border: 1.5px solid #2d3040; color: #e8e9ed;
       border-radius: 10px; padding: 12px 14px; font-family: 'Space Grotesk', sans-serif;
@@ -83,31 +69,23 @@
     }
     .form-input:focus { border-color: #3b82f6; }
     .form-label { font-size: 0.75rem; font-weight: 600; letter-spacing: .06em; color: #6b7280; text-transform: uppercase; margin-bottom: 6px; display: block; }
-
-    /* ── Botón primario ── */
     .btn-primary {
       background: #3b82f6; color: #fff; border-radius: 12px; padding: 14px;
       font-family: 'Space Grotesk', sans-serif; font-size: 1rem; font-weight: 600;
       width: 100%; cursor: pointer; border: none; transition: all .15s;
     }
     .btn-primary:active { transform: scale(0.97); background: #2563eb; }
-
-    /* ── Botón peligro ── */
     .btn-danger {
       background: transparent; color: #f87171; border: 1.5px solid #450a0a;
       border-radius: 10px; padding: 10px; font-size: 0.875rem; font-weight: 600;
       cursor: pointer; transition: all .15s; font-family: 'Space Grotesk', sans-serif;
     }
     .btn-danger:active { background: #450a0a; }
-
-    /* ── Loader ── */
     .spinner {
       width: 36px; height: 36px; border: 3px solid #2d3040; border-top-color: #3b82f6;
       border-radius: 50%; animation: spin .7s linear infinite;
     }
     @keyframes spin { to { transform: rotate(360deg); } }
-
-    /* ── Toast ── */
     .toast {
       position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%) translateY(80px);
       background: #1a1d2e; border: 1.5px solid #2d3040; border-radius: 12px;
@@ -115,15 +93,11 @@
       transition: transform .3s cubic-bezier(.4,0,.2,1); white-space: nowrap;
     }
     .toast.show { transform: translateX(-50%) translateY(0); }
-
-    /* ── Animación entrada tarjeta ── */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(16px); }
       to   { opacity: 1; transform: translateY(0); }
     }
     .card-enter { animation: fadeUp .3s ease forwards; }
-
-    /* ── Scrollbar ── */
     ::-webkit-scrollbar { width: 4px; }
     ::-webkit-scrollbar-track { background: transparent; }
     ::-webkit-scrollbar-thumb { background: #2d3040; border-radius: 4px; }
@@ -131,9 +105,6 @@
 </head>
 <body>
 
-<!-- ═══════════════════════════════════════════════════════════
-     HEADER
-════════════════════════════════════════════════════════════ -->
 <header class="sticky top-0 z-50 px-4 py-3" style="background:#0f1117; border-bottom: 1.5px solid #1a1d2e;">
   <div class="flex items-center justify-between max-w-lg mx-auto">
     <div>
@@ -141,9 +112,7 @@
       <p class="text-xs mt-0.5" style="color:#4b5563;" id="status-label">Conectando…</p>
     </div>
     <div class="flex items-center gap-3">
-      <!-- Indicador conexión -->
       <span id="conn-dot" class="w-2 h-2 rounded-full" style="background:#4b5563;"></span>
-      <!-- Botón añadir -->
       <button id="btn-add-open"
         class="flex items-center gap-1.5 px-3 py-2 rounded-xl text-sm font-bold"
         style="background:#1e3a5f; color:#60a5fa; border:1.5px solid #1d4ed8;">
@@ -153,18 +122,13 @@
   </div>
 </header>
 
-<!-- ═══════════════════════════════════════════════════════════
-     BARRA BÚSQUEDA + TOGGLE
-════════════════════════════════════════════════════════════ -->
 <div class="sticky top-[57px] z-40 px-4 py-3 max-w-lg mx-auto" style="background:#0f1117;">
-  <!-- Búsqueda -->
   <div class="relative mb-3">
     <svg class="absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4b5563" stroke-width="2">
       <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
     </svg>
     <input id="search-input" class="search-input" type="search" placeholder="Buscar producto o ubicación…" />
   </div>
-  <!-- Toggle modo compra -->
   <div class="flex items-center justify-between px-3 py-2.5 rounded-xl" style="background:#1a1d2e; border:1.5px solid #2d3040;">
     <div>
       <p class="text-sm font-semibold leading-none">🛒 Modo Lista de la Compra</p>
@@ -176,9 +140,6 @@
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════════════════════════
-     RESUMEN (badges)
-════════════════════════════════════════════════════════════ -->
 <div class="px-4 pb-3 max-w-lg mx-auto">
   <div class="grid grid-cols-3 gap-2" id="summary-bar">
     <div class="rounded-xl px-3 py-2 text-center" style="background:#14532d; border:1px solid #166534;">
@@ -196,39 +157,28 @@
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════════════════════════
-     LISTA DE PRODUCTOS
-════════════════════════════════════════════════════════════ -->
 <main class="px-4 pb-32 max-w-lg mx-auto" id="products-container">
-  <!-- Estado carga -->
   <div id="loading-state" class="flex flex-col items-center justify-center py-20 gap-4">
     <div class="spinner"></div>
     <p style="color:#4b5563;">Cargando inventario…</p>
   </div>
-  <!-- Lista vacía -->
   <div id="empty-state" class="hidden flex-col items-center justify-center py-20 gap-3 text-center">
     <p style="font-size:3rem;">📭</p>
     <p class="font-semibold text-lg">Nada por aquí</p>
     <p style="color:#6b7280;" class="text-sm">Pulsa "+ Añadir" para registrar tu primer producto</p>
   </div>
-  <!-- Sin resultados búsqueda -->
   <div id="no-results-state" class="hidden flex-col items-center justify-center py-20 gap-3 text-center">
     <p style="font-size:3rem;">🔍</p>
     <p class="font-semibold">Sin resultados</p>
     <p style="color:#6b7280;" class="text-sm">Prueba con otro nombre o ubicación</p>
   </div>
-  <!-- Grid de productos -->
   <div id="products-list" class="hidden flex flex-col gap-3"></div>
 </main>
 
-<!-- ═══════════════════════════════════════════════════════════
-     MODAL: AÑADIR / EDITAR PRODUCTO
-════════════════════════════════════════════════════════════ -->
 <div id="modal-add" class="modal-overlay">
   <div class="modal-sheet">
     <div class="modal-handle"></div>
     <h2 id="modal-title" class="text-xl font-bold mb-5">Nuevo Producto</h2>
-
     <div class="flex flex-col gap-4">
       <div>
         <label class="form-label">Nombre del producto *</label>
@@ -253,7 +203,6 @@
         <input id="f-unit" class="form-input" type="text" placeholder="Ej: ud, kg, L, pack…" maxlength="20" />
       </div>
     </div>
-
     <div class="mt-5 flex flex-col gap-2">
       <button id="btn-save" class="btn-primary">💾 Guardar Producto</button>
       <div class="grid grid-cols-2 gap-2">
@@ -264,37 +213,18 @@
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════════════════════════
-     TOAST NOTIFICACIONES
-════════════════════════════════════════════════════════════ -->
 <div id="toast" class="toast"></div>
 
-<!-- ═══════════════════════════════════════════════════════════
-     FIREBASE SDK v10 + LÓGICA APP
-════════════════════════════════════════════════════════════ -->
 <script type="module">
-// ╔══════════════════════════════════════════════════════════╗
-// ║   PASO 1 – PEGA AQUÍ TU CONFIGURACIÓN DE FIREBASE       ║
-// ║   (Obtenida desde la Consola de Firebase)               ║
-// ╚══════════════════════════════════════════════════════════╝
+// ── Tu configuración de Firebase ────────────────────────────
 const firebaseConfig = {
-
-  apiKey: "AIzaSyD5cEqkfG6NB7jWN8lGupmQ_OkgHfW5t-I",
-
-  authDomain: "trastero-37e66.firebaseapp.com",
-
-  databaseURL: "https://trastero-37e66-default-rtdb.europe-west1.firebasedatabase.app",
-
-  projectId: "trastero-37e66",
-
-  storageBucket: "trastero-37e66.firebasestorage.app",
-
+  apiKey:            "AIzaSyD5cEqkfG6NB7jWN8lGupmQ_OkgHfW5t-I",
+  authDomain:        "trastero-37e66.firebaseapp.com",
+  databaseURL:       "https://trastero-37e66-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId:         "trastero-37e66",
+  storageBucket:     "trastero-37e66.firebasestorage.app",
   messagingSenderId: "1079490156067",
-
-  appId: "1:1079490156067:web:ccd0276567bd4779980396"
-
-};
-
+  appId:             "1:1079490156067:web:ccd0276567bd4779980396"
 };
 
 // ── Imports Firebase ────────────────────────────────────────
@@ -302,49 +232,39 @@ import { initializeApp }            from "https://www.gstatic.com/firebasejs/10.
 import { getDatabase, ref, onValue, push, update, remove, serverTimestamp }
                                     from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
 
-// ── Inicializar ─────────────────────────────────────────────
 const app = initializeApp(firebaseConfig);
 const db  = getDatabase(app);
-const PRODUCTS_PATH = "inventario/productos"; // ruta en tu base de datos
+const PRODUCTS_PATH = "inventario/productos";
 
-// ══════════════════════════════════════════════════════════════
-//  ESTADO DE LA APLICACIÓN
-// ══════════════════════════════════════════════════════════════
-let allProducts   = {};      // { firebaseKey: { name, location, qty, min, unit } }
-let editingKey    = null;    // clave del producto en edición (null = nuevo)
-let searchQuery   = "";
-let shoppingMode  = false;
+let allProducts  = {};
+let editingKey   = null;
+let searchQuery  = "";
+let shoppingMode = false;
 
-// ══════════════════════════════════════════════════════════════
-//  ELEMENTOS DEL DOM
-// ══════════════════════════════════════════════════════════════
-const $list         = document.getElementById("products-list");
-const $loading      = document.getElementById("loading-state");
-const $empty        = document.getElementById("empty-state");
-const $noResults    = document.getElementById("no-results-state");
-const $searchInput  = document.getElementById("search-input");
-const $toggle       = document.getElementById("toggle-compra");
-const $modal        = document.getElementById("modal-add");
-const $modalTitle   = document.getElementById("modal-title");
-const $fName        = document.getElementById("f-name");
-const $fLoc         = document.getElementById("f-location");
-const $fQty         = document.getElementById("f-qty");
-const $fMin         = document.getElementById("f-min");
-const $fUnit        = document.getElementById("f-unit");
-const $btnSave      = document.getElementById("btn-save");
-const $btnCancel    = document.getElementById("btn-cancel");
-const $btnDelete    = document.getElementById("btn-delete");
-const $btnAddOpen   = document.getElementById("btn-add-open");
-const $statusLabel  = document.getElementById("status-label");
-const $connDot      = document.getElementById("conn-dot");
-const $cntGreen     = document.getElementById("cnt-green");
-const $cntYellow    = document.getElementById("cnt-yellow");
-const $cntRed       = document.getElementById("cnt-red");
-const $toast        = document.getElementById("toast");
+const $list        = document.getElementById("products-list");
+const $loading     = document.getElementById("loading-state");
+const $empty       = document.getElementById("empty-state");
+const $noResults   = document.getElementById("no-results-state");
+const $searchInput = document.getElementById("search-input");
+const $toggle      = document.getElementById("toggle-compra");
+const $modal       = document.getElementById("modal-add");
+const $modalTitle  = document.getElementById("modal-title");
+const $fName       = document.getElementById("f-name");
+const $fLoc        = document.getElementById("f-location");
+const $fQty        = document.getElementById("f-qty");
+const $fMin        = document.getElementById("f-min");
+const $fUnit       = document.getElementById("f-unit");
+const $btnSave     = document.getElementById("btn-save");
+const $btnCancel   = document.getElementById("btn-cancel");
+const $btnDelete   = document.getElementById("btn-delete");
+const $btnAddOpen  = document.getElementById("btn-add-open");
+const $statusLabel = document.getElementById("status-label");
+const $connDot     = document.getElementById("conn-dot");
+const $cntGreen    = document.getElementById("cnt-green");
+const $cntYellow   = document.getElementById("cnt-yellow");
+const $cntRed      = document.getElementById("cnt-red");
+const $toast       = document.getElementById("toast");
 
-// ══════════════════════════════════════════════════════════════
-//  UTILIDADES
-// ══════════════════════════════════════════════════════════════
 let toastTimer;
 function showToast(msg, ms = 2500) {
   $toast.textContent = msg;
@@ -363,9 +283,6 @@ function getStatusEmoji(s) {
   return s === "green" ? "✅" : s === "yellow" ? "⚠️" : "🔴";
 }
 
-// ══════════════════════════════════════════════════════════════
-//  ESCUCHA EN TIEMPO REAL – FIREBASE
-// ══════════════════════════════════════════════════════════════
 const productsRef = ref(db, PRODUCTS_PATH);
 
 onValue(productsRef, (snapshot) => {
@@ -379,17 +296,12 @@ onValue(productsRef, (snapshot) => {
 });
 
 function setConnected(ok) {
-  $connDot.style.background   = ok ? "#22c55e" : "#ef4444";
-  $statusLabel.textContent    = ok ? "Sincronizado en tiempo real" : "Sin conexión";
+  $connDot.style.background = ok ? "#22c55e" : "#ef4444";
+  $statusLabel.textContent  = ok ? "Sincronizado en tiempo real" : "Sin conexión";
 }
 
-// ══════════════════════════════════════════════════════════════
-//  RENDER PRINCIPAL
-// ══════════════════════════════════════════════════════════════
 function render() {
   const q = searchQuery.toLowerCase();
-
-  // filtrar
   const entries = Object.entries(allProducts).filter(([, p]) => {
     const matchSearch = !q
       || p.name.toLowerCase().includes(q)
@@ -399,36 +311,31 @@ function render() {
     return matchSearch && matchShop;
   });
 
-  // resumen
   const allVals = Object.values(allProducts);
   $cntGreen.textContent  = allVals.filter(p => getStatus(Number(p.qty), Number(p.min)) === "green").length;
   $cntYellow.textContent = allVals.filter(p => getStatus(Number(p.qty), Number(p.min)) === "yellow").length;
   $cntRed.textContent    = allVals.filter(p => getStatus(Number(p.qty), Number(p.min)) === "red").length;
 
-  // estados vacío / carga
   $loading.classList.add("hidden");
-  $empty.classList.toggle("hidden",    allVals.length > 0 || entries.length > 0);
+  $empty.classList.toggle("hidden", allVals.length > 0 || entries.length > 0);
   $noResults.classList.toggle("hidden", !(allVals.length > 0 && entries.length === 0));
   $list.classList.toggle("hidden", entries.length === 0);
 
   if (entries.length === 0) { $list.innerHTML = ""; return; }
 
-  // ordenar: rojos primero, luego amarillos, luego verdes
   entries.sort(([, a], [, b]) => {
     const order = { red: 0, yellow: 1, green: 2 };
     return order[getStatus(Number(a.qty), Number(a.min))] - order[getStatus(Number(b.qty), Number(b.min))];
   });
 
-  // renderizar tarjetas
   $list.innerHTML = entries.map(([key, p]) => renderCard(key, p)).join("");
 
-  // eventos botones +/-  y editar
   $list.querySelectorAll("[data-action]").forEach(el => {
-    el.addEventListener("click", (e) => {
+    el.addEventListener("click", () => {
       const action = el.dataset.action;
       const key    = el.dataset.key;
-      if (action === "inc") changeQty(key, 1);
-      if (action === "dec") changeQty(key, -1);
+      if (action === "inc")  changeQty(key, 1);
+      if (action === "dec")  changeQty(key, -1);
       if (action === "edit") openEdit(key);
     });
   });
@@ -439,11 +346,9 @@ function renderCard(key, p) {
   const min    = Number(p.min);
   const status = getStatus(qty, min);
   const unit   = p.unit || "ud";
-
   const badgeCls  = `badge-${status}`;
   const cardCls   = `card-${status}`;
   const statusTxt = status === "green" ? "OK" : status === "yellow" ? "Mínimo" : "Urgente";
-
   return `
   <div class="card-enter rounded-2xl border-2 p-4 ${cardCls}" style="border-style:solid;">
     <div class="flex items-start justify-between gap-2 mb-3">
@@ -457,11 +362,8 @@ function renderCard(key, p) {
       </div>
       <button data-action="edit" data-key="${key}"
         class="p-2 rounded-xl flex-shrink-0"
-        style="background:#1a1d2e; border:1.5px solid #2d3040; color:#9ca3af;">
-        ✏️
-      </button>
+        style="background:#1a1d2e; border:1.5px solid #2d3040; color:#9ca3af;">✏️</button>
     </div>
-
     <div class="flex items-center justify-between">
       <button data-action="dec" data-key="${key}" class="btn-qty btn-minus">−</button>
       <div class="text-center">
@@ -477,9 +379,6 @@ function escapeHtml(str) {
   return String(str).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
 }
 
-// ══════════════════════════════════════════════════════════════
-//  FIREBASE CRUD
-// ══════════════════════════════════════════════════════════════
 async function changeQty(key, delta) {
   const p = allProducts[key];
   if (!p) return;
@@ -498,15 +397,9 @@ async function saveProduct() {
   const qty  = parseInt($fQty.value, 10);
   const min  = parseInt($fMin.value, 10);
   const unit = $fUnit.value.trim() || "ud";
-
-  if (!name || !loc || isNaN(qty) || isNaN(min)) {
-    showToast("⚠️ Rellena todos los campos obligatorios");
-    return;
-  }
+  if (!name || !loc || isNaN(qty) || isNaN(min)) { showToast("⚠️ Rellena todos los campos obligatorios"); return; }
   if (qty < 0 || min < 0) { showToast("⚠️ Las cantidades no pueden ser negativas"); return; }
-
   const data = { name, location: loc, qty, min, unit, updatedAt: serverTimestamp() };
-
   try {
     if (editingKey) {
       await update(ref(db, `${PRODUCTS_PATH}/${editingKey}`), data);
@@ -531,14 +424,10 @@ async function deleteProduct() {
     showToast("🗑 Producto eliminado");
     closeModal();
   } catch(e) {
-    showToast("❌ Error al eliminar");
-    console.error(e);
+    showToast("❌ Error al eliminar"); console.error(e);
   }
 }
 
-// ══════════════════════════════════════════════════════════════
-//  MODAL
-// ══════════════════════════════════════════════════════════════
 function openAdd() {
   editingKey = null;
   $modalTitle.textContent = "Nuevo Producto";
@@ -562,28 +451,14 @@ function openEdit(key) {
   $modal.classList.add("open");
 }
 
-function closeModal() {
-  $modal.classList.remove("open");
-}
+function closeModal() { $modal.classList.remove("open"); }
 
-// ══════════════════════════════════════════════════════════════
-//  EVENTOS UI
-// ══════════════════════════════════════════════════════════════
 $btnAddOpen.addEventListener("click", openAdd);
 $btnCancel.addEventListener("click",  closeModal);
 $btnSave.addEventListener("click",    saveProduct);
 $btnDelete.addEventListener("click",  deleteProduct);
-
-// Cerrar modal tocando el overlay
 $modal.addEventListener("click", (e) => { if (e.target === $modal) closeModal(); });
-
-// Búsqueda
-$searchInput.addEventListener("input", (e) => {
-  searchQuery = e.target.value;
-  render();
-});
-
-// Toggle modo compra
+$searchInput.addEventListener("input", (e) => { searchQuery = e.target.value; render(); });
 $toggle.addEventListener("click", () => {
   shoppingMode = !shoppingMode;
   $toggle.classList.toggle("on", shoppingMode);
@@ -591,7 +466,6 @@ $toggle.addEventListener("click", () => {
   render();
 });
 
-// Swipe down para cerrar modal en móvil
 let touchStartY = 0;
 document.getElementById("modal-add").querySelector(".modal-sheet").addEventListener("touchstart", e => {
   touchStartY = e.touches[0].clientY;
@@ -599,25 +473,6 @@ document.getElementById("modal-add").querySelector(".modal-sheet").addEventListe
 document.getElementById("modal-add").querySelector(".modal-sheet").addEventListener("touchend", e => {
   if (e.changedTouches[0].clientY - touchStartY > 80) closeModal();
 }, { passive: true });
-
-// ══════════════════════════════════════════════════════════════
-//  INIT
-// ══════════════════════════════════════════════════════════════
-// El estado de carga se mantiene hasta que Firebase responde (onValue)
-// Si Firebase no está configurado, mostrar mensaje de ayuda
-if (firebaseConfig.apiKey === "TU_API_KEY") {
-  $loading.innerHTML = `
-    <div class="text-center px-4">
-      <p style="font-size:3rem; margin-bottom:16px;">⚙️</p>
-      <p class="font-bold text-lg mb-2">Firebase no configurado</p>
-      <p style="color:#6b7280;" class="text-sm leading-relaxed">
-        Abre este archivo en un editor de texto y pega tu configuración de Firebase
-        en el objeto <code style="background:#1a1d2e; padding:2px 6px; border-radius:4px; color:#60a5fa;">firebaseConfig</code>
-        (línea ~113).
-      </p>
-    </div>`;
-  $statusLabel.textContent = "Firebase no configurado";
-}
 </script>
 </body>
 </html>
